@@ -12,6 +12,8 @@ session_unset();
 session_destroy();
 
 // * DELETE COOKIE
-setcookie('login', '', -3600);
+setcookie('login', '', time() - 3600);
+unset($_COOKIE['login']);
 
 header("Location: login.php");
+exit();
